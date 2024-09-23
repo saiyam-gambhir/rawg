@@ -8,6 +8,7 @@ import PlatformSelector from "./components/PlatformSelector"
 import SearchInput from "./components/SearchInput"
 import SortSelector from "./components/SortSelector"
 import GameHeading from "./components/GameHeading"
+import ColorModeSwitch from "./components/ColorModeSwitch"
 
 export interface GameQuery {
   genre: Genre | null;
@@ -35,8 +36,11 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <GameHeading gameQuery={gameQuery} />
-        <HStack gap={4} paddingLeft={2} marginBottom={2} marginTop={2}>
+        <HStack align="center" justify="space-between">
+          <GameHeading gameQuery={gameQuery} />
+          <ColorModeSwitch />
+        </HStack>
+        <HStack gap={4} paddingLeft={2} marginBottom={2} marginTop={4}>
           <SearchInput onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
           <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })} />
           <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })} />

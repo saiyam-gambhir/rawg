@@ -25,7 +25,7 @@ interface Props {
 
    return (
      <HStack marginY={2}>
-      {platforms.map(platform => (
+      {platforms?.map(platform => (
         <Icon key={platform.id} as={IconMap[platform.slug]} color='blue.200' />
       ))}
      </HStack>
