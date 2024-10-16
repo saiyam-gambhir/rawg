@@ -1,6 +1,6 @@
 import { Genre } from "./hooks/useGenres"
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react"
-import { Platform } from "./hooks/useData"
+import { Platform } from "./hooks/usePlatforms"
 import { useState } from "react"
 import GameGrid from "./components/GameGrid"
 import GenreList from "./components/GenreList"
