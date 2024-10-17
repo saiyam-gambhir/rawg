@@ -4,10 +4,10 @@ import useGenres, { Genre } from "../hooks/useGenres"
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if(error) return null;
@@ -23,7 +23,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         {data?.results.map(genre => <ListItem key={genre.id} paddingY='8px'>
           <HStack>
             <Image boxSize='32px' borderRadius={8} src={getCroppedImageurl(genre.image_background)} objectFit="cover" />
-            <Button whiteSpace="normal" textAlign="left" fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'} onClick={() => onSelectGenre(genre)} variant="link" fontSize='large'>{genre.name}</Button>
+            <Button whiteSpace="normal" textAlign="left" fontWeight={genre.id === selectedGenreId ? 'bold' : 'normal'} onClick={() => onSelectGenre(genre)} variant="link" fontSize='large'>{genre.name}</Button>
           </HStack>
         </ListItem>)}
       </List>

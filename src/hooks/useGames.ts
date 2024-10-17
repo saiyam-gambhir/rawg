@@ -1,7 +1,8 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App"
-import APIClient, { FetchResponse } from "../services/api-client";
 import { Platform } from "./usePlatforms";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import APIClient, { FetchResponse } from "../services/api-client";
+import ms from "ms";
 
 export interface Game {
   background_image: string;
@@ -18,9 +19,9 @@ const useGames = (gameQuery: GameQuery) =>
     queryKey: ['games', gameQuery], // gameQuery is the object to watch for changes
     queryFn: ({ pageParam = 1}) => apiClient.getAll({
       params: {
-        genres: gameQuery.genre?.id,
+        genres: gameQuery.genreId,
         ordering : gameQuery.sortOrder,
-        parent_plarforms: gameQuery.platform?.id,
+        parent_plarforms: gameQuery.platformId,
         search: gameQuery.searchText,
         page: pageParam,
       },
@@ -29,7 +30,7 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.count ? allPages.length + 1 : undefined
     },
-    staleTime: 24 * 60 * 60 * 1000 //24h
+    staleTime: ms('24h')
   })
 
 export default useGames
