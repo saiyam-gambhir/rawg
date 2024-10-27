@@ -12,15 +12,14 @@ const SearchInput = () => {
       onSubmit={(event) => {
         event.preventDefault();
         if (ref.current) setSearchText(ref.current.value);
-      }}
-    >
+      }}>
       <InputGroup>
         <InputLeftElement children={<BsSearch />} />
         <Input
           ref={ref}
           borderRadius={20}
-          placeholder="Search games..."
-          variant="filled"
+          placeholder='Search games...'
+          variant='filled'
         />
       </InputGroup>
     </form>

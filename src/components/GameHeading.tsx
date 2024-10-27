@@ -14,9 +14,8 @@ const GameHeading = () => {
 
   return (
     <Heading
-      as="h1"
-      marginLeft={2}
-    >
+      as='h1'
+      marginLeft={2}>
       {heading}
     </Heading>
   );

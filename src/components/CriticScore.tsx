@@ -10,10 +10,9 @@ const CriticScore = ({ score }: Props) => {
   return (
     <Badge
       colorScheme={color}
-      fontSize="14px"
+      fontSize='14px'
       paddingX={2}
-      borderRadius="10px"
-    >
+      borderRadius='10px'>
       {score}
     </Badge>
   );

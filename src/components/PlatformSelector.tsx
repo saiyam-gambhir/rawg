@@ -18,16 +18,14 @@ const PlatformSelector = () => {
       <Menu>
         <MenuButton
           as={Button}
-          rightIcon={<BsChevronBarDown />}
-        >
+          rightIcon={<BsChevronBarDown />}>
           {selectedPlatform?.name || 'Platforms'}
         </MenuButton>
         <MenuList>
           {data?.results.map((platform) => (
             <MenuItem
               onClick={() => setSelectedPlatformId(platform.id)}
-              key={platform.id}
-            >
+              key={platform.id}>
               {platform.name}
             </MenuItem>
           ))}

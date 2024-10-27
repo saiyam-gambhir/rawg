@@ -10,7 +10,7 @@ import SortSelector from '../components/SortSelector';
 const HomePage = () => {
   return (
     <Grid
-      padding="10px"
+      padding='10px'
       templateAreas={{
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
@@ -18,21 +18,18 @@ const HomePage = () => {
       templateColumns={{
         base: '1fr',
         lg: '200px 1fr',
-      }}
-    >
-      <Show above="lg">
+      }}>
+      <Show above='lg'>
         <GridItem
-          area="aside"
-          paddingX="5px"
-        >
+          area='aside'
+          paddingX='5px'>
           <GenreList />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem area='main'>
         <HStack
-          align="center"
-          justify="space-between"
-        >
+          align='center'
+          justify='space-between'>
           <GameHeading />
           <ColorModeSwitch />
         </HStack>
@@ -40,8 +37,7 @@ const HomePage = () => {
           gap={4}
           paddingLeft={2}
           marginBottom={2}
-          marginTop={4}
-        >
+          marginTop={4}>
           <SearchInput />
           <PlatformSelector />
           <SortSelector />
