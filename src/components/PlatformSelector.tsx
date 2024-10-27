@@ -16,16 +16,12 @@ const PlatformSelector = () => {
   return (
     <div>
       <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<BsChevronBarDown />}>
+        <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
           {selectedPlatform?.name || 'Platforms'}
         </MenuButton>
         <MenuList>
           {data?.results.map((platform) => (
-            <MenuItem
-              onClick={() => setSelectedPlatformId(platform.id)}
-              key={platform.id}>
+            <MenuItem onClick={() => setSelectedPlatformId(platform.id)} key={platform.id}>
               {platform.name}
             </MenuItem>
           ))}

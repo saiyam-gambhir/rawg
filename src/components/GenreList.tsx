@@ -19,16 +19,9 @@ const GenreList = () => {
       <Heading marginBottom={4}>Genres</Heading>
       <List>
         {data?.results.map((genre) => (
-          <ListItem
-            key={genre.id}
-            paddingY='8px'>
+          <ListItem key={genre.id} paddingY='8px'>
             <HStack>
-              <Image
-                boxSize='32px'
-                borderRadius={8}
-                src={getCroppedImageurl(genre.image_background)}
-                objectFit='cover'
-              />
+              <Image boxSize='32px' borderRadius={8} src={getCroppedImageurl(genre.image_background)} objectFit='cover' />
               <Button
                 whiteSpace='normal'
                 textAlign='left'

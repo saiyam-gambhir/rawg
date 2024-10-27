@@ -19,17 +19,12 @@ const SortSelector = () => {
   return (
     <div>
       <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<BsChevronBarDown />}>
+        <MenuButton as={Button} rightIcon={<BsChevronBarDown />}>
           Order By - {currentSortOrder?.label || 'Relevance'}
         </MenuButton>
         <MenuList>
           {sortOrders.map((order) => (
-            <MenuItem
-              onClick={() => setSelectedSortOrder(order.value)}
-              key={order.value}
-              value={order.value}>
+            <MenuItem onClick={() => setSelectedSortOrder(order.value)} key={order.value} value={order.value}>
               {order.label}
             </MenuItem>
           ))}
